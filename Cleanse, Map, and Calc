@@ -1,5 +1,5 @@
 SELECT 
-    STR_TO_DATE(date, '%d-%m-%Y') AS formatted_date,  -- cleanse the date format if needed
+    STR_TO_DATE(date, '%dd/%mm/%YY') AS formatted_date,
     customer_name,
     main_table.product_code,
     description,
