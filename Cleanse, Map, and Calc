@@ -1,0 +1,14 @@
+SELECT 
+    STR_TO_DATE(date, '%d-%m-%Y') AS formatted_date,  -- cleanse the date format if needed
+    customer_name,
+    main_table.product_code,
+    description,
+    quantity,
+    hj.harga_jual,
+    (quantity * hj.harga_jual) AS total_harga_jual
+FROM 
+    main_table
+JOIN 
+    harga_jual_table hj
+ON 
+    main_table.product_code = hj.product_code;
